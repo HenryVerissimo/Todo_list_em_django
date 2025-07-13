@@ -7,3 +7,15 @@ repos:
         language: system
         files: "uv.lock"
         stages: [manual, pre-commit]
+    -   id: format
+        name: format with ruff
+        entry: bash -c "uv run ruff format ."
+        language: system
+        files: "\.py$"
+        stages: [pre-commit]
+    -   id: lint with ruff
+        name: linter with ruff
+        entry: bash -c "uv run ruff check ."
+        language: system
+        files: "\.py$"
+        stages: [pre-commit]
