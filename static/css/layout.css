@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Staatliches&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box
+}
+
+body {
+    color: #fff;
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    background-color: #00FF7F;
+}
+
+h1 {
+    color: #000;
+    font-size: 4rem;
+    font-family: "Luckiest Guy", cursive;
+}
+
+header nav {
+    color: #000;
+    font-weight: bold;
+}
+
+header a {
+    color: #000f;
+    text-decoration: none;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #fff;
+}
+
+main {
+    padding: 5rem;
+}
+
+.separator-bar {
+    font-size: 2rem;
+    
+}
+
+main {
+    height: 800px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    color: #000;
+    background-color: #00FF7F;
+}
+
+footer p {
+    font-weight: 400;
+}

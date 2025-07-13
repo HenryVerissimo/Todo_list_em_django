@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'todo/css/todo_table.css' %}">
+
+{% block title %}
+    TODO LIST
+{% endblock %}
+
+{% block content %}
+    <h2>Lista de tarefas</h2>
+    <section>
+        <table class="todo-table">
+            <thead>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>data de criação</th>
+                <th>data de prazo</th>
+                <th>data de finalização</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </section>
+{% endblock %}

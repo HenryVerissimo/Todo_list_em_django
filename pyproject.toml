@@ -1,0 +1,21 @@
+[project]
+name = "todo-list"
+version = "0.1.0"
+description = "Todo list web app created with django framework"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "django>=4.2.23",
+    "python-decouple>=3.8",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=3.5.0",
+    "ruff>=0.12.3",
+    "taskipy>=1.14.1",
+]
+
+[tool.taskipy.tasks]
+lint = "ruff check ."
+format = "ruff format ."

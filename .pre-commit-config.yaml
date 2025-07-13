@@ -1,0 +1,9 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: requirements
+        name: Create new requirements
+        entry: bash -c "uv export --no-hashes --no-header --no-annotate --format requirements.txt > requirements.txt; git add requirements.txt"
+        language: system
+        files: "uv.lock"
+        stages: [manual, pre-commit]
