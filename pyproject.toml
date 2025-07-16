@@ -22,8 +22,14 @@ dev = [
 line-length = 120
 
 [tool.taskipy.tasks]
+#Ruff tasks
 lint = "ruff check ."
 format = "ruff format ."
+
+#Django tasks
+runserver = "uv run python3 manage.py runserver"
+migrate = "uv run python3 manage.py migrate"
+makemigrations = "uv run python3 manage.py makemigrations"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "setup.settings"
