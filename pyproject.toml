@@ -1,5 +1,5 @@
 [project]
-name = "todo-list"
+name = "todo_list_Django"
 version = "0.1.0"
 description = "Todo list web app created with django framework"
 readme = "README.md"

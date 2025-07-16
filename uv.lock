@@ -501,7 +501,7 @@ wheels = [
 ]
 
 [[package]]
-name = "todo-list"
+name = "todo-list-django"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
