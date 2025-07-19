@@ -3,9 +3,10 @@ name: Django CI
 on: [push, pull_request]
 
 jobs:
-  build:
+  tests:
 
     runs-on: ubuntu-latest
+    environment: test
     strategy:
       matrix:
         python-version: ["3.12", "3.13"]
@@ -19,11 +20,12 @@ jobs:
       - name: Install UV and Dependencies
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv venv .venv
           uv sync --all-groups
       - name: Create .env file
         run: |
-          echo "SECRET_KEY=uma-chave-secreta-para-testes" >> .env
-          echo "DEBUG=True" >> .env
-          echo "ALLOWED_HOSTS=localhost,127.0.0.1" >>.env
-      - name: Run unit tests
+          echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
+          echo DEBUG=${{ vars.DEBUG }} >> .env
+          echo ALLOWED_HOSTS=* >>.env
+      - name: Run unit tests with pytest
         run: uv run pytest
