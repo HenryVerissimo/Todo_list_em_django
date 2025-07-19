@@ -22,11 +22,12 @@ jobs:
           curl -LsSf https://astral.sh/uv/install.sh | sh
           uv venv .venv
           uv sync --all-groups
-          source .venv/bin/activate
       - name: Create .env file
         run: |
           echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
           echo "DEBUG=${{ vars.DEBUG }} >> .env"
           echo "ALLOWED_HOSTS=* >>.env"
       - name: Run unit tests with pytest
-        run: pytest
+        run: |
+          source .venv/bin/activate
+          pytest
