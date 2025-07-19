@@ -24,8 +24,8 @@ jobs:
           uv sync --all-groups
       - name: Create .env file
         run: |
-          echo SECRET_KEY=${{ secrets.SECRET_KEY }} >> .env
-          echo DEBUG=${{ vars.DEBUG }} >> .env
-          echo ALLOWED_HOSTS=* >>.env
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> .env
+          echo "DEBUG=${{ vars.DEBUG }} >> .env"
+          echo "ALLOWED_HOSTS=* >>.env"
       - name: Run unit tests with pytest
         run: uv run pytest
